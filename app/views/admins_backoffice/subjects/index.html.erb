@@ -12,28 +12,26 @@
         <th>#</th>
         <th>Email</th>
         <th>
-          <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle" do %>
-            <i class="fa fa-plus"></i>
-            <% end %>
+
         </th>
       </tr>
     </thead>
     <tbody>
-      <% @admins.each do |admin| %>
+      <% @subjects.each do |subject| %>
         <tr>
           <td>
-            <%= admin.id %>
+            <%= subject.id %>
           </td>
           <td>
-            <%= admin.email %>
+            <%= subject.description %>
           </td>
           <td style="width: 100px">
 
-            <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %>
+            <%= link_to '', class:"btn btn-primary btn-circle" do %>
               <i class="fa fa-edit"></i>
               <% end %>
 
-              <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle" do %>
+              <%= link_to '', method: :delete, class:"btn btn-danger btn-circle" do %>
               <i class="fa fa-minus"></i>
               <% end %>
           </td>
@@ -44,5 +42,5 @@
  </div>
 </div>
 <div class="text-center">
-  <%= paginate @admins %>
+  <%= paginate @subjects %>
 </div>
