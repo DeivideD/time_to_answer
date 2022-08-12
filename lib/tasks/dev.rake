@@ -13,6 +13,7 @@ namespace :dev do
       show_spinner("Cadastrando administradores extras...") { %x(rails dev:add_extra_admins) }
       show_spinner("Cadastrando o usuário padrão...") { %x(rails dev:add_default_user) }
       show_spinner("Cadastrando assuntos padroes...") { %x(rails dev:add_default_subjects) }
+      show_spinner("Cadastrando perguntas padroes...") { %x(rails dev:add_default_questions) }
     else
       puts "Você não está em ambiente de desenvolvimento!"
     end
@@ -29,7 +30,7 @@ namespace :dev do
 
   desc "Adiciona administradores extras"
   task add_extra_admins: :environment do
-    10.times do |i|
+    50.times do |i|
       Admin.create!(
         email: Faker::Internet.email,
         password: DEFAULT_PASSWORD,
@@ -55,6 +56,16 @@ namespace :dev do
     File.open(file_path, 'r').each do |line|
       Subject.create!(
         description: line.strip
+      )
+    end
+  end
+
+  desc "Adicionar perguntas padroes"
+  task add_default_questions: :environment do
+    Subject.all.each do |subject|
+      Question.create!(
+        description: "#{Faker::Lorem.paragraph} ?", 
+        subject: subject
       )
     end
   end

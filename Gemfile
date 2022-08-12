@@ -41,6 +41,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'tty-spinner'
 gem 'faker'
 gem 'rubocop', '~> 0.42.0'
+gem 'pry'
 
 gem 'kaminari'
 

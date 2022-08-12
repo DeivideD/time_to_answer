@@ -12,10 +12,3 @@
  *
  *= require_self
  */
-.prev, .next{
-  display: none;
-}
-
-.contaner-table-admin{
-  min-height: 500px;
-}
