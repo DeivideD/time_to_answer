@@ -31,10 +31,14 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def destroy
-    if @admin.destroy
-      redirect_to admins_backoffice_admins_path, notice: 'Administrador excluido com sucesso!'
+    if !(@admin.email == 'admin@admin.com')
+      if @admin.destroy
+        redirect_to admins_backoffice_admins_path, notice: 'Administrador excluido com sucesso!'
+      else
+        render :index
+      end
     else
-      render :index
+      redirect_to admins_backoffice_admins_path, notice: 'Master não pode ser excluido!'
     end
   end
 

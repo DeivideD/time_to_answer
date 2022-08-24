@@ -12,6 +12,11 @@ bootstrap@3.3.7:
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
   integrity sha1-WjiTlFSfIzMIdaOxUGVldPip63E=
 
+data-confirm-modal@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/data-confirm-modal/-/data-confirm-modal-1.6.2.tgz#81fc8ea298cfd9311d066915d1710b3cfa57d96b"
+  integrity sha512-UYYgx8hS65X8Y336YRp1x6A5Gfkhh4iYkLq5jw7oS++hTcq/3yO8JOrbfHvvr7qqqQxBSPRyvUXnFEFIr4ja4w==
+
 fastclick@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/fastclick/-/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a"

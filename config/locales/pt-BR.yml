@@ -31,5 +31,9 @@
 
 pt-BR:
   admin:
+    hello: "Ola Mundo"
+    list: "Listando"
+    action:
+      new: "Novo"
+      edit: "Editando"
     
-

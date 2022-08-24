@@ -1,9 +1,17 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="btn-novo-adm">
-      <%= link_to new_admins_backoffice_admin_path, class:'btn btn-success' do %>
+      <%= link_to new_admins_backoffice_admin_path, 
+      class:'btn btn-success', 
+      'data-target' => '#exampleModal',  
+      'data-toggle' => 'modal',
+      remote: true do %>
         Novo Administrador
       <% end %>
+
+      <%= link_to new_admins_backoffice_admin_path, class:'btn btn-success' do %>
+      Novo Administrador
+    <% end %>
     </div>
     <h1 class="page-header"><%= t('admin.hello') %></h1>
   </div>
@@ -17,7 +25,6 @@
           <th><%= translation(@admins, :id) %></th>
           <th><%= translation(@admins, :email) %></th>
           <th>
-            --
           </th>
         </tr>
       </thead>
@@ -36,8 +43,11 @@
                 <i class="fa fa-edit"></i>
                 <% end %>
 
-                  <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle" do
-                    %>
+                  <%= link_to admins_backoffice_admin_path(admin), 
+                    method: :delete, 
+                    class:"btn btn-danger btn-circle", 
+                    data: {confirm: 'Confirmar?', title: 'Deletar Adminitrador'} do
+                  %>
                     <i class="fa fa-minus"></i>
                     <% end %>
             </td>
@@ -52,3 +62,7 @@
 </div>
 <!-- Button trigger modal -->
 
+<%= 
+  render partial: 'admins_backoffice/admins/shared/form_modal_head',
+  locals: {action: t('admin.action.new') }
+%>
